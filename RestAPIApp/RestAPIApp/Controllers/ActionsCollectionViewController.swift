@@ -7,12 +7,17 @@
 
 import UIKit
 
+enum UsersActions: String, CaseIterable{
+    case downloadImage = "Download Image"
+    case users = "Users"
+}
+
 class ActionsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     private var collectionView: UICollectionView?
     
     private let reuseIdentifier = "Cell"
-    
+    private let usersActions = UsersActions.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,22 +56,16 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
     
     // MARK: UICollectionViewDataSource
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 2
+        return usersActions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MyCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(title: "Hello!", backgroundColor: .white)
+        cell.configure(title: usersActions[indexPath.item].rawValue, backgroundColor: .white)
         return cell
     }
     
@@ -77,7 +76,15 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = ImageViewController()
+        switch usersActions[indexPath.row] {
+        case .downloadImage:
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .users:
+            self.navigationController?.pushViewController(vc, animated: true)
+
+            
+        }
     }
     /*
      // Uncomment this method to specify if the specified item should be highlighted during tracking

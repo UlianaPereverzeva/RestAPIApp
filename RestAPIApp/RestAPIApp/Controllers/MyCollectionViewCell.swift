@@ -8,7 +8,7 @@
 import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
-    private var titleLabel: UILabel?
+     var titleLabel: UILabel?
     
     func configure(title: String, backgroundColor: UIColor) {
         if titleLabel == nil {
