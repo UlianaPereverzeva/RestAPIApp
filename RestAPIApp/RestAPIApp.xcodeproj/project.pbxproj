@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8526641B295CAB410011C0FE /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526641A295CAB410011C0FE /* MyTableViewCell.swift */; };
+		8526641D295CAB490011C0FE /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526641C295CAB490011C0FE /* UsersViewController.swift */; };
+		8526641F295CDF740011C0FE /* DetailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526641E295CDF730011C0FE /* DetailInformationViewController.swift */; };
+		85266421295DEFAD0011C0FE /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266420295DEFAD0011C0FE /* mapViewController.swift */; };
+		85266423295DF54C0011C0FE /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266422295DF54C0011C0FE /* postViewController.swift */; };
+		85266425295DFBA30011C0FE /* postTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266424295DFBA30011C0FE /* postTableViewCell.swift */; };
+		85266429295E0E2E0011C0FE /* ApiConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266428295E0E2E0011C0FE /* ApiConstans.swift */; };
 		8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA27295B16B600F39F5F /* AppDelegate.swift */; };
 		8555BA2A295B16B600F39F5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA29295B16B600F39F5F /* SceneDelegate.swift */; };
 		8555BA2F295B16B600F39F5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8555BA2D295B16B600F39F5F /* Main.storyboard */; };
@@ -15,9 +22,17 @@
 		8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA3C295B17ED00F39F5F /* ActionsCollectionViewController.swift */; };
 		8555BA3F295B2A3700F39F5F /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA3E295B2A3700F39F5F /* MyCollectionViewCell.swift */; };
 		8555BA41295C48CD00F39F5F /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA40295C48CD00F39F5F /* ImageViewController.swift */; };
+		8555BA45295C8A9400F39F5F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA44295C8A9400F39F5F /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8526641A295CAB410011C0FE /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		8526641C295CAB490011C0FE /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		8526641E295CDF730011C0FE /* DetailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationViewController.swift; sourceTree = "<group>"; };
+		85266420295DEFAD0011C0FE /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		85266422295DF54C0011C0FE /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
+		85266424295DFBA30011C0FE /* postTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postTableViewCell.swift; sourceTree = "<group>"; };
+		85266428295E0E2E0011C0FE /* ApiConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstans.swift; sourceTree = "<group>"; };
 		8555BA24295B16B600F39F5F /* RestAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8555BA27295B16B600F39F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8555BA29295B16B600F39F5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +43,7 @@
 		8555BA3C295B17ED00F39F5F /* ActionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCollectionViewController.swift; sourceTree = "<group>"; };
 		8555BA3E295B2A3700F39F5F /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		8555BA40295C48CD00F39F5F /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		8555BA44295C8A9400F39F5F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +57,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85266426295E09F70011C0FE /* user */ = {
+			isa = PBXGroup;
+			children = (
+				8526641C295CAB490011C0FE /* UsersViewController.swift */,
+				8526641A295CAB410011C0FE /* MyTableViewCell.swift */,
+				8555BA3C295B17ED00F39F5F /* ActionsCollectionViewController.swift */,
+				8555BA3E295B2A3700F39F5F /* MyCollectionViewCell.swift */,
+				8555BA40295C48CD00F39F5F /* ImageViewController.swift */,
+				8526641E295CDF730011C0FE /* DetailInformationViewController.swift */,
+				85266420295DEFAD0011C0FE /* mapViewController.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		85266427295E0A110011C0FE /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				85266422295DF54C0011C0FE /* postViewController.swift */,
+				85266424295DFBA30011C0FE /* postTableViewCell.swift */,
+				85266428295E0E2E0011C0FE /* ApiConstans.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		8555BA1B295B16B600F39F5F = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +100,9 @@
 		8555BA26295B16B600F39F5F /* RestAPIApp */ = {
 			isa = PBXGroup;
 			children = (
+				8555BA43295C89AF00F39F5F /* Models */,
 				8555BA3B295B178400F39F5F /* Controllers */,
-				8555BA27295B16B600F39F5F /* AppDelegate.swift */,
-				8555BA29295B16B600F39F5F /* SceneDelegate.swift */,
+				8555BA42295C898400F39F5F /* Delegares */,
 				8555BA2D295B16B600F39F5F /* Main.storyboard */,
 				8555BA30295B16B800F39F5F /* Assets.xcassets */,
 				8555BA32295B16B800F39F5F /* LaunchScreen.storyboard */,
@@ -74,11 +114,27 @@
 		8555BA3B295B178400F39F5F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8555BA3C295B17ED00F39F5F /* ActionsCollectionViewController.swift */,
-				8555BA3E295B2A3700F39F5F /* MyCollectionViewCell.swift */,
-				8555BA40295C48CD00F39F5F /* ImageViewController.swift */,
+				85266426295E09F70011C0FE /* user */,
+				85266427295E0A110011C0FE /* Post */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8555BA42295C898400F39F5F /* Delegares */ = {
+			isa = PBXGroup;
+			children = (
+				8555BA27295B16B600F39F5F /* AppDelegate.swift */,
+				8555BA29295B16B600F39F5F /* SceneDelegate.swift */,
+			);
+			path = Delegares;
+			sourceTree = "<group>";
+		};
+		8555BA43295C89AF00F39F5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8555BA44295C8A9400F39F5F /* Models.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +208,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85266423295DF54C0011C0FE /* postViewController.swift in Sources */,
+				8526641F295CDF740011C0FE /* DetailInformationViewController.swift in Sources */,
+				85266421295DEFAD0011C0FE /* mapViewController.swift in Sources */,
+				85266425295DFBA30011C0FE /* postTableViewCell.swift in Sources */,
+				85266429295E0E2E0011C0FE /* ApiConstans.swift in Sources */,
+				8526641B295CAB410011C0FE /* MyTableViewCell.swift in Sources */,
 				8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */,
 				8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */,
 				8555BA41295C48CD00F39F5F /* ImageViewController.swift in Sources */,
+				8555BA45295C8A9400F39F5F /* Models.swift in Sources */,
+				8526641D295CAB490011C0FE /* UsersViewController.swift in Sources */,
 				8555BA3F295B2A3700F39F5F /* MyCollectionViewCell.swift in Sources */,
 				8555BA2A295B16B600F39F5F /* SceneDelegate.swift in Sources */,
 			);

@@ -12,18 +12,29 @@ enum UsersActions: String, CaseIterable{
     case users = "Users"
 }
 
+
+
 class ActionsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     private var collectionView: UICollectionView?
-    
     private let reuseIdentifier = "Cell"
     private let usersActions = UsersActions.allCases
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.configureCollectionView()
-        self.view.backgroundColor = .systemPink
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
+        self.view.backgroundColor = UIColor(red: 0.76, green: 0.88, blue: 0.77, alpha: 1.00)
+        updateTableViewContentInset()
     }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     
     private func configureCollectionView() {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
@@ -65,26 +76,46 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MyCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(title: usersActions[indexPath.item].rawValue, backgroundColor: .white)
+//        let xConstraint = NSLayoutConstraint(item: cell, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
+//
+//        let yConstraint = NSLayoutConstraint(item: cell, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
+//
+//        NSLayoutConstraint.activate([xConstraint, yConstraint])
+//
+        cell.configure(title: usersActions[indexPath.item].rawValue, backgroundColor: UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width - 20, height: 70)
+         CGSize(width: collectionView.bounds.width - 20, height: 70)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ImageViewController()
         switch usersActions[indexPath.row] {
         case .downloadImage:
-            self.navigationController?.pushViewController(vc, animated: true)
+            let vc1 = ImageViewController()
+            self.navigationController?.pushViewController(vc1, animated: true)
         case .users:
-            self.navigationController?.pushViewController(vc, animated: true)
+            let vc2 = UsersViewController()
+            self.navigationController?.pushViewController(vc2, animated: true)
 
             
         }
+    }
+    
+    func updateTableViewContentInset() {
+        let viewHeight: CGFloat = view.frame.size.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom
+        let collectionViewContentHeight: CGFloat = CGFloat(70 * usersActions.count) + CGFloat(70 * (usersActions.count - 1))//collectionView?.contentSize.height ?? 0
+        let marginHeight: CGFloat = (viewHeight - collectionViewContentHeight) / 2.0
+
+        self.collectionView?.contentInset = UIEdgeInsets(top: marginHeight + view.safeAreaInsets.top, left: 0, bottom: marginHeight + view.safeAreaInsets.bottom, right: 0)
     }
     /*
      // Uncomment this method to specify if the specified item should be highlighted during tracking

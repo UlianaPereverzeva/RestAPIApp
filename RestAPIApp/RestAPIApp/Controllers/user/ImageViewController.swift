@@ -12,12 +12,14 @@ class ImageViewController: UIViewController {
     var defaultImage = UIImageView()
     var activityIndicator: UIActivityIndicatorView!
     
+    
+    
     private let imageURLString = "https://media.cntraveler.com/photos/5eb18e42fc043ed5d9779733/master/pass/BlackForest-Germany-GettyImages-147180370.jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.76, green: 0.88, blue: 0.77, alpha: 1.00)
         
         fetchImage ()
         setUpImage()
@@ -25,7 +27,7 @@ class ImageViewController: UIViewController {
     }
     
     private func fetchImage (){
-        URLSession.shared.dataTask(with: URLRequest(url: URL(string: imageURLString)!)) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: URLRequest(url: URL(string: imageURLString)!)) { [weak self] data, response, error in
             DispatchQueue.main.async {
                 self?.activityIndicator?.stopAnimating()
                 
@@ -43,7 +45,8 @@ class ImageViewController: UIViewController {
                     self?.defaultImage.image = image
                 }
             }
-        } .resume()
+        }
+        task.resume()
         
     }
     
@@ -51,8 +54,8 @@ class ImageViewController: UIViewController {
         
         let forestImage = UIImage(named: "defaultImage")
         defaultImage.contentMode = UIView.ContentMode.scaleAspectFit
-        defaultImage.frame.size.width = 300
-        defaultImage.frame.size.height = 300
+        defaultImage.frame.size.width = 350
+        defaultImage.frame.size.height = 350
         defaultImage.center = self.view.center
         defaultImage.image = forestImage
         view.addSubview(defaultImage)
