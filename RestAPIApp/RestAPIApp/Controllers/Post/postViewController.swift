@@ -19,9 +19,14 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setupTableView()
         
         view.backgroundColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
-        tableView.backgroundColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
+        tableView.backgroundColor = .clear//UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
         navigationItem.title = "Posts"
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+
+        navigationItem.rightBarButtonItems = [add]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +36,7 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func fetchPost() {
         
         guard let userID = user?.id else {return}
-        let pathUrl = "\(ApiConstans.serverPath)?userId=\(userID)"
+        let pathUrl = "\(ApiConstans.postsPath)?userId=\(userID)"
         guard let url = URL(string: pathUrl) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { data, response, _ in
@@ -64,6 +69,8 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.register(postTableViewCell.self, forCellReuseIdentifier: "cellForPost")
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
         self.tableView = tableView
        }
 
@@ -84,8 +91,23 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return UITableView.automaticDimension
     }
     
-
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        self.post.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+    }
+    
+    @objc func addTapped(_ sender:UIButton!) {
+        let vc = CreatingPostViewController()
+        vc.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

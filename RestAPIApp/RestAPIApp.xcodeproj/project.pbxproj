@@ -14,6 +14,7 @@
 		85266423295DF54C0011C0FE /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266422295DF54C0011C0FE /* postViewController.swift */; };
 		85266425295DFBA30011C0FE /* postTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266424295DFBA30011C0FE /* postTableViewCell.swift */; };
 		85266429295E0E2E0011C0FE /* ApiConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85266428295E0E2E0011C0FE /* ApiConstans.swift */; };
+		853FA0E1295F4B5E008F4D40 /* CreatingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FA0E0295F4B5E008F4D40 /* CreatingPostViewController.swift */; };
 		8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA27295B16B600F39F5F /* AppDelegate.swift */; };
 		8555BA2A295B16B600F39F5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555BA29295B16B600F39F5F /* SceneDelegate.swift */; };
 		8555BA2F295B16B600F39F5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8555BA2D295B16B600F39F5F /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		85266422295DF54C0011C0FE /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
 		85266424295DFBA30011C0FE /* postTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postTableViewCell.swift; sourceTree = "<group>"; };
 		85266428295E0E2E0011C0FE /* ApiConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstans.swift; sourceTree = "<group>"; };
+		853FA0E0295F4B5E008F4D40 /* CreatingPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingPostViewController.swift; sourceTree = "<group>"; };
 		8555BA24295B16B600F39F5F /* RestAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8555BA27295B16B600F39F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8555BA29295B16B600F39F5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				85266422295DF54C0011C0FE /* postViewController.swift */,
 				85266424295DFBA30011C0FE /* postTableViewCell.swift */,
 				85266428295E0E2E0011C0FE /* ApiConstans.swift */,
+				853FA0E0295F4B5E008F4D40 /* CreatingPostViewController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				85266425295DFBA30011C0FE /* postTableViewCell.swift in Sources */,
 				85266429295E0E2E0011C0FE /* ApiConstans.swift in Sources */,
 				8526641B295CAB410011C0FE /* MyTableViewCell.swift in Sources */,
+				853FA0E1295F4B5E008F4D40 /* CreatingPostViewController.swift in Sources */,
 				8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */,
 				8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */,
 				8555BA41295C48CD00F39F5F /* ImageViewController.swift in Sources */,

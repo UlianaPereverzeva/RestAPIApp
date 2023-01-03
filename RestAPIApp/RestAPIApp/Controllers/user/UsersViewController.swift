@@ -12,8 +12,6 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     var tableView: UITableView!
     var users: [User] = []
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()

@@ -58,11 +58,10 @@ class DetailInformationViewController: UIViewController {
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalToConstant: 1000).isActive = true
+//        scrollView.heightAnchor.constraint(equalToConstant: 1000).isActive = true
         
         
         contentview.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        contentview.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
         contentview.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentview.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentview.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
