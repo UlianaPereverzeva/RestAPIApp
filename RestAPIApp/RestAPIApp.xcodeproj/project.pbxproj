@@ -27,6 +27,7 @@
 		8582525F29649C55003525A7 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8582525E29649C55003525A7 /* SwiftyJSON */; };
 		8582526229649F18003525A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8582526129649F18003525A7 /* Alamofire */; };
 		8582526529649F86003525A7 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8582526429649F86003525A7 /* AlamofireImage */; };
+		858252682964ADE9003525A7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252672964ADE9003525A7 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		8555BA3E295B2A3700F39F5F /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		8555BA40295C48CD00F39F5F /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8555BA44295C8A9400F39F5F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		858252672964ADE9003525A7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		8555BA26295B16B600F39F5F /* RestAPIApp */ = {
 			isa = PBXGroup;
 			children = (
+				858252662964ADB3003525A7 /* Services */,
 				8555BA43295C89AF00F39F5F /* Models */,
 				8555BA3B295B178400F39F5F /* Controllers */,
 				8555BA42295C898400F39F5F /* Delegares */,
@@ -144,6 +147,14 @@
 				8555BA44295C8A9400F39F5F /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		858252662964ADB3003525A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				858252672964ADE9003525A7 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */,
 				8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */,
 				8555BA41295C48CD00F39F5F /* ImageViewController.swift in Sources */,
+				858252682964ADE9003525A7 /* NetworkService.swift in Sources */,
 				8555BA45295C8A9400F39F5F /* Models.swift in Sources */,
 				8526641D295CAB490011C0FE /* UsersViewController.swift in Sources */,
 				8555BA3F295B2A3700F39F5F /* MyCollectionViewCell.swift in Sources */,

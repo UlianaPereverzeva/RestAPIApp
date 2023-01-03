@@ -99,11 +99,23 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
         80
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-      if editingStyle == .delete {
-        self.post.remove(at: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .fade)
-      }
+        if editingStyle == .delete,
+           let id = post[indexPath.row].id {
+            
+            NetworkService.deletePost(postID: id) { [weak self] json, error in
+                if json != nil{
+                    self?.post.remove(at: indexPath.row)
+                    self?.tableView.deleteRows(at: [indexPath], with: .fade)
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
     
     @objc func addTapped(_ sender:UIButton!) {

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class CreatingPostViewController: UIViewController, UITextViewDelegate {
 
@@ -188,8 +189,36 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
     }
     
     @objc func postWithAlamofireButtonAction(_ sender:UIButton!) {
-//        let vc = postViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if let userId = user?.id,
+           let title = textField.text,
+           let text = textView.text,
+           let url = ApiConstans.postsPathURL {
+            
+            let parameters: Parameters = ["userId" : userId,
+                                          "title" : title,
+                                          "body" : text]
+            
+            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                debugPrint(response)
+                print(response.request)
+                print(response.response)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case.success(let data):
+                    print(data)
+                    print(JSON(data))
+                    self.navigationController?.popViewController(animated: true)
+                case.failure(let error):
+                    print(error)
+                }
+            }
+            
+            
+        }
+        
+        
     }
 }
 
