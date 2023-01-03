@@ -47,6 +47,7 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             do {
                 self.post = try JSONDecoder().decode([Post].self, from: data)
+                
             } catch let error {
                 print(error)
             }

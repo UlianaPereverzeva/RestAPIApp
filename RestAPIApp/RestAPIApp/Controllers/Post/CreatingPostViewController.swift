@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class CreatingPostViewController: UIViewController, UITextViewDelegate {
 
@@ -60,7 +61,7 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
         
         NSLayoutConstraint.activate([
             
-            self.textField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 110),
+            self.textField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90),
             self.textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 14),
             self.textField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -14),
             self.textField.heightAnchor.constraint(equalToConstant: 60),
@@ -99,7 +100,7 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
     func setUpButton(){
         let urlButton = UIButton(type: .system)
         urlButton.setTitle("post With URL", for: .normal)
-        urlButton.addTarget(self, action: #selector(postWithURLbuttonAction(_:)), for: .touchUpInside)
+        urlButton.addTarget(self, action: #selector(postWithURLButtonAction(_:)), for: .touchUpInside)
         urlButton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         urlButton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
         urlButton.layer.cornerRadius = 20
@@ -115,7 +116,7 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
 
         let alamofireButton = UIButton(type: .system)
         alamofireButton.setTitle("post With Alamofire", for: .normal)
-        alamofireButton.addTarget(self, action: #selector(postWithURLbuttonAction(_:)), for: .touchUpInside)
+        alamofireButton.addTarget(self, action: #selector(postWithAlamofireButtonAction(_:)), for: .touchUpInside)
         alamofireButton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         alamofireButton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
         alamofireButton.layer.cornerRadius = 20
@@ -144,7 +145,49 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    @objc func postWithURLbuttonAction(_ sender:UIButton!) {
+    @objc func postWithURLButtonAction(_ sender:UIButton!) {
+        
+        if let userId = user?.id,
+        let title = textField.text,
+        let text = textView.text,
+        let url = ApiConstans.postsPathURL {
+            
+            var request = URLRequest(url: url)
+            
+            //Header
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            
+            //Body
+            let postBodyJson: [String: Any] = [ "userId": userId,
+                                                "title": title,
+                                                "body": text]
+            
+            let httpBody = try? JSONSerialization.data(withJSONObject: postBodyJson, options: [])
+            request.httpBody = httpBody
+            
+            //Create dataTask and post new request
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                
+                print(response ?? "")
+                
+                if let data = data  {
+                    print(data)
+                    
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    
+                } else if let error = error {
+                    print(error)
+                }
+            }.resume()
+        }
+    }
+    
+    @objc func postWithAlamofireButtonAction(_ sender:UIButton!) {
 //        let vc = postViewController()
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
