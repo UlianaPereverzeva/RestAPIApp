@@ -17,7 +17,6 @@ enum UsersActions: String, CaseIterable{
 class ActionsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     private var collectionView: UICollectionView?
-    private let reuseIdentifier = "Cell"
     private let usersActions = UsersActions.allCases
     
     
@@ -29,13 +28,7 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
         self.view.backgroundColor = UIColor(red: 0.76, green: 0.88, blue: 0.77, alpha: 1.00)
         updateTableViewContentInset()
     }
-    
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    
+
     private func configureCollectionView() {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -55,16 +48,6 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
         ])
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,12 +59,7 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MyCollectionViewCell else {
             return UICollectionViewCell()
         }
-//        let xConstraint = NSLayoutConstraint(item: cell, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
-//
-//        let yConstraint = NSLayoutConstraint(item: cell, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
-//
-//        NSLayoutConstraint.activate([xConstraint, yConstraint])
-//
+
         cell.configure(title: usersActions[indexPath.item].rawValue, backgroundColor: UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00))
         return cell
     }
@@ -105,8 +83,6 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
         case .users:
             let vc2 = UsersViewController()
             self.navigationController?.pushViewController(vc2, animated: true)
-
-            
         }
     }
     
@@ -117,33 +93,5 @@ class ActionsCollectionViewController: UIViewController, UICollectionViewDelegat
 
         self.collectionView?.contentInset = UIEdgeInsets(top: marginHeight + view.safeAreaInsets.top, left: 0, bottom: marginHeight + view.safeAreaInsets.bottom, right: 0)
     }
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
     
 }

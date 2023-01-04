@@ -8,6 +8,7 @@
 import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
+    
     private var titleLabel: UILabel?
     
     func configure(title: String, backgroundColor: UIColor) {
@@ -43,9 +44,5 @@ class MyCollectionViewCell: UICollectionViewCell {
             label.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
         ])
-    }
-    
-    private func configureUI() {
-        
     }
 }

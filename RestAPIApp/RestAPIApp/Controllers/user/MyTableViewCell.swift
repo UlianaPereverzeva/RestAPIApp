@@ -25,8 +25,6 @@ class MyTableViewCell: UITableViewCell {
 //        // Configure the view for the selected state
 //    }
     
-    
-    
     func configure(name: String, surname: String) {
         if !self.didSetUpUI {
             self.setUpImage()
@@ -36,8 +34,6 @@ class MyTableViewCell: UITableViewCell {
         
         self.title.text = name
         self.subtitle.text = surname
-        
-
     }
     
     func setUpImage() {

@@ -46,11 +46,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MyTableViewCell else {
             return UITableViewCell()
-            }
-//        let bgColorView = UIView()
-//        bgColorView.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
-//        cell.selectedBackgroundView = bgColorView
-        
+        }
         let user = users[indexPath.row]
         cell.configure(name: user.name ?? "", surname: user.username ?? "")
         return cell

@@ -418,7 +418,9 @@ class DetailInformationViewController: UIViewController {
     }
     
     @objc func albomButtonAction(_ sender:UIButton!) {
-        
+        let vc = AlbomsViewController()
+        vc.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func toDosButtonAction(_ sender:UIButton!) {

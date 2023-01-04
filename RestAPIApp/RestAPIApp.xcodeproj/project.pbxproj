@@ -30,6 +30,10 @@
 		858252682964ADE9003525A7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252672964ADE9003525A7 /* NetworkService.swift */; };
 		8582526A2964BED7003525A7 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252692964BED7003525A7 /* CommentsViewController.swift */; };
 		8582526C2964BF42003525A7 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582526B2964BF42003525A7 /* CommentsTableViewCell.swift */; };
+		8582526F2965CF9C003525A7 /* AlbomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582526E2965CF9C003525A7 /* AlbomsViewController.swift */; };
+		858252712965D0FF003525A7 /* AlbomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252702965D0FF003525A7 /* AlbomTableViewCell.swift */; };
+		858252732965F4C0003525A7 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252722965F4C0003525A7 /* PhotosViewController.swift */; };
+		858252752965F4E5003525A7 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		858252672964ADE9003525A7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		858252692964BED7003525A7 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		8582526B2964BF42003525A7 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		8582526E2965CF9C003525A7 /* AlbomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomsViewController.swift; sourceTree = "<group>"; };
+		858252702965D0FF003525A7 /* AlbomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomTableViewCell.swift; sourceTree = "<group>"; };
+		858252722965F4C0003525A7 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,7 @@
 		8555BA3B295B178400F39F5F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8582526D2965C4CF003525A7 /* Alboms */,
 				85266426295E09F70011C0FE /* user */,
 				85266427295E0A110011C0FE /* Post */,
 			);
@@ -161,6 +170,17 @@
 				858252672964ADE9003525A7 /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8582526D2965C4CF003525A7 /* Alboms */ = {
+			isa = PBXGroup;
+			children = (
+				8582526E2965CF9C003525A7 /* AlbomsViewController.swift */,
+				858252702965D0FF003525A7 /* AlbomTableViewCell.swift */,
+				858252722965F4C0003525A7 /* PhotosViewController.swift */,
+				858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */,
+			);
+			path = Alboms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +270,11 @@
 				85266425295DFBA30011C0FE /* postTableViewCell.swift in Sources */,
 				85266429295E0E2E0011C0FE /* ApiConstans.swift in Sources */,
 				8526641B295CAB410011C0FE /* MyTableViewCell.swift in Sources */,
+				858252712965D0FF003525A7 /* AlbomTableViewCell.swift in Sources */,
+				8582526F2965CF9C003525A7 /* AlbomsViewController.swift in Sources */,
+				858252752965F4E5003525A7 /* PhotosCollectionViewCell.swift in Sources */,
 				853FA0E1295F4B5E008F4D40 /* CreatingPostViewController.swift in Sources */,
+				858252732965F4C0003525A7 /* PhotosViewController.swift in Sources */,
 				8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */,
 				8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */,
 				8555BA41295C48CD00F39F5F /* ImageViewController.swift in Sources */,
