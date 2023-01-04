@@ -118,6 +118,12 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CommentsViewController()
+        vc.postId = post[indexPath.row].id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func addTapped(_ sender:UIButton!) {
         let vc = CreatingPostViewController()
         vc.user = user

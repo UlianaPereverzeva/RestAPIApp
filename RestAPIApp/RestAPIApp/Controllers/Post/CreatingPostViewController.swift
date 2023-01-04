@@ -62,7 +62,7 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
         
         NSLayoutConstraint.activate([
             
-            self.textField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90),
+            self.textField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
             self.textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 14),
             self.textField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -14),
             self.textField.heightAnchor.constraint(equalToConstant: 60),
@@ -104,14 +104,14 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
         urlButton.addTarget(self, action: #selector(postWithURLButtonAction(_:)), for: .touchUpInside)
         urlButton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         urlButton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
-        urlButton.layer.cornerRadius = 20
+        urlButton.layer.cornerRadius = 30
         urlButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.postWithURLbutton = urlButton
         self.view.addSubview(postWithURLbutton)
         self.postWithURLbutton.translatesAutoresizingMaskIntoConstraints = false
 
-        postWithURLbutton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        postWithURLbutton.topAnchor.constraint(equalTo: self.textView.bottomAnchor, constant: 50).isActive = true
+        postWithURLbutton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        postWithURLbutton.topAnchor.constraint(equalTo: self.textView.bottomAnchor, constant: 30).isActive = true
         postWithURLbutton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 14).isActive = true
         postWithURLbutton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -14).isActive = true
 
@@ -120,13 +120,13 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
         alamofireButton.addTarget(self, action: #selector(postWithAlamofireButtonAction(_:)), for: .touchUpInside)
         alamofireButton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         alamofireButton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
-        alamofireButton.layer.cornerRadius = 20
+        alamofireButton.layer.cornerRadius = 30
         alamofireButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.postWithAlamofirebutton = alamofireButton
         self.view.addSubview(postWithAlamofirebutton)
         self.postWithAlamofirebutton.translatesAutoresizingMaskIntoConstraints = false
 
-        postWithAlamofirebutton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        postWithAlamofirebutton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         postWithAlamofirebutton.topAnchor.constraint(equalTo: self.postWithURLbutton.bottomAnchor, constant: 14).isActive = true
         postWithAlamofirebutton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 14).isActive = true
         postWithAlamofirebutton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -14).isActive = true

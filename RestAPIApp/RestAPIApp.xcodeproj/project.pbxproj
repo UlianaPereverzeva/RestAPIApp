@@ -28,6 +28,8 @@
 		8582526229649F18003525A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8582526129649F18003525A7 /* Alamofire */; };
 		8582526529649F86003525A7 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8582526429649F86003525A7 /* AlamofireImage */; };
 		858252682964ADE9003525A7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252672964ADE9003525A7 /* NetworkService.swift */; };
+		8582526A2964BED7003525A7 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252692964BED7003525A7 /* CommentsViewController.swift */; };
+		8582526C2964BF42003525A7 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582526B2964BF42003525A7 /* CommentsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		8555BA40295C48CD00F39F5F /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8555BA44295C8A9400F39F5F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		858252672964ADE9003525A7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		858252692964BED7003525A7 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		8582526B2964BF42003525A7 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				85266424295DFBA30011C0FE /* postTableViewCell.swift */,
 				85266428295E0E2E0011C0FE /* ApiConstans.swift */,
 				853FA0E0295F4B5E008F4D40 /* CreatingPostViewController.swift */,
+				858252692964BED7003525A7 /* CommentsViewController.swift */,
+				8582526B2964BF42003525A7 /* CommentsTableViewCell.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -248,8 +254,10 @@
 				8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */,
 				8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */,
 				8555BA41295C48CD00F39F5F /* ImageViewController.swift in Sources */,
+				8582526C2964BF42003525A7 /* CommentsTableViewCell.swift in Sources */,
 				858252682964ADE9003525A7 /* NetworkService.swift in Sources */,
 				8555BA45295C8A9400F39F5F /* Models.swift in Sources */,
+				8582526A2964BED7003525A7 /* CommentsViewController.swift in Sources */,
 				8526641D295CAB490011C0FE /* UsersViewController.swift in Sources */,
 				8555BA3F295B2A3700F39F5F /* MyCollectionViewCell.swift in Sources */,
 				8555BA2A295B16B600F39F5F /* SceneDelegate.swift in Sources */,

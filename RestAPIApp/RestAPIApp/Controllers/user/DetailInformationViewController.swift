@@ -77,13 +77,13 @@ class DetailInformationViewController: UIViewController {
         pbutton.addTarget(self, action: #selector(postButtonAction(_:)), for: .touchUpInside)
         pbutton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         pbutton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
-        pbutton.layer.cornerRadius = 20
+        pbutton.layer.cornerRadius = 30
         pbutton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.postButton = pbutton
         self.contentview.addSubview(postButton)
         self.postButton.translatesAutoresizingMaskIntoConstraints = false
 
-        postButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        postButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         
         let abutton = UIButton(type: .system)
@@ -91,13 +91,13 @@ class DetailInformationViewController: UIViewController {
         abutton.addTarget(self, action: #selector(albomButtonAction(_:)), for: .touchUpInside)
         abutton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         abutton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
-        abutton.layer.cornerRadius = 20
+        abutton.layer.cornerRadius = 30
         abutton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.albomButton = abutton
         self.contentview.addSubview(albomButton)
         self.albomButton.translatesAutoresizingMaskIntoConstraints = false
 
-        albomButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        albomButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         
         let tdbutton = UIButton(type: .system)
@@ -105,13 +105,13 @@ class DetailInformationViewController: UIViewController {
         tdbutton.addTarget(self, action: #selector(toDosButtonAction(_:)), for: .touchUpInside)
         tdbutton.setTitleColor(UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00), for: .normal)
         tdbutton.backgroundColor = UIColor(red: 0.23, green: 0.13, blue: 0.22, alpha: 1.00)
-        tdbutton.layer.cornerRadius = 20
+        tdbutton.layer.cornerRadius = 30
         tdbutton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.toDos = tdbutton
         self.contentview.addSubview(toDos)
         self.toDos.translatesAutoresizingMaskIntoConstraints = false
 
-        toDos.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        toDos.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         
         let addressbutton = UIButton(type: .system)
@@ -388,7 +388,7 @@ class DetailInformationViewController: UIViewController {
         mainStackView.axis = NSLayoutConstraint.Axis.vertical
         mainStackView.distribution  = .equalSpacing
         mainStackView.alignment = .fill
-        mainStackView.spacing = 50.0
+        mainStackView.spacing = 30.0
         
         mainStackView.addArrangedSubview(imageStack)
         mainStackView.addArrangedSubview(textStackView)
