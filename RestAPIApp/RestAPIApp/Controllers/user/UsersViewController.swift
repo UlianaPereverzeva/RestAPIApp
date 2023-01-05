@@ -18,9 +18,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         fetchUsers()
         tableView.backgroundColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
         navigationItem.title = "Users"
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
-
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.76, green: 0.88, blue: 0.77, alpha: 1.00)
     }
     
 

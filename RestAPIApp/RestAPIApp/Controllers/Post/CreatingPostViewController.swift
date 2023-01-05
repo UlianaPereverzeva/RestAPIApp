@@ -29,10 +29,6 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
 
 
     }
-//    override func viewWillLayoutSubviews() {
-//        setUpUI()
-//
-//    }
     
     func setUpUI() {
         let textF = UITextField()

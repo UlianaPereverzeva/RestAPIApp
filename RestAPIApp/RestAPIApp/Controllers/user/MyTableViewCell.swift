@@ -14,16 +14,15 @@ class MyTableViewCell: UITableViewCell {
     private var defaultImage = UIImageView()
     private var didSetUpUI = false
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.isHighlighted = false
-        // Initialization code
-    }
     
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//        // Configure the view for the selected state
-//    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected == true{
+            self.contentView.backgroundColor = UIColor(red: 0.70, green: 0.82, blue: 0.70, alpha: 1.00)
+            } else if selected == false {
+                self.contentView.backgroundColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
+            }
+    }
     
     func configure(name: String, surname: String) {
         if !self.didSetUpUI {
@@ -31,7 +30,6 @@ class MyTableViewCell: UITableViewCell {
             self.setUpTitleAndSubtitle()
             self.didSetUpUI = true
         }
-        
         self.title.text = name
         self.subtitle.text = surname
     }
