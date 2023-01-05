@@ -8,8 +8,25 @@
 import UIKit
 import MapKit
 
-class mapViewController: UIViewController {
+class PinForMap: NSObject, MKAnnotation {
 
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+
+    init(pinTital: String, pinSubtitle: String , location: CLLocationCoordinate2D) {
+        self.title = pinTital
+        self.subtitle = pinSubtitle
+        self.coordinate = location
+    }
+}
+
+class mapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+    let locationManager = CLLocationManager()
+//    let annotation: MKAnnotationView?
+    var user: User?
+  
     let mapView : MKMapView = {
         let map = MKMapView()
         map.overrideUserInterfaceStyle = .dark
@@ -22,6 +39,19 @@ class mapViewController: UIViewController {
         setMapConstraints()
         mapView.delegate = self
         
+        let latitude = user?.address?.geo?.lat
+        let longitude = user?.address?.geo?.lng
+                
+        let latitudeDegrees = CLLocationDegrees(latitude!)!
+        let longitudeDegrees = CLLocationDegrees(longitude!)!
+        
+        let location = CLLocationCoordinate2D(latitude: latitudeDegrees , longitude: longitudeDegrees)
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+        self.mapView.setRegion(region, animated: true)
+        
+        let pin = PinForMap(pinTital: user?.company?.name ?? "", pinSubtitle: user?.address?.city ?? "", location: location)
+        
+        self.mapView.addAnnotation(pin)
     }
     
     private func setMapConstraints() {
@@ -33,18 +63,8 @@ class mapViewController: UIViewController {
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
-extension mapViewController : MKMapViewDelegate {
-     //Do something
-}
+//extension mapViewController : MKMapViewDelegate {
+//     //Do something
+//}

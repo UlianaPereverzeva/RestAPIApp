@@ -26,8 +26,6 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
         navigationItem.title = "Create new post"
         setUpUI()
         setUpButton()
-
-
     }
     
     func setUpUI() {
@@ -211,23 +209,6 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
                     print(error)
                 }
             }
-            
-            
         }
-        
-        
     }
 }
-
-//class CustomSearchTextField: UITextField {
-//   required init?(coder aDecoder: NSCoder) {
-//    super.init(coder: aDecoder)
-//   }
-//
-//   override func textRect(forBounds bounds: CGRect) -> CGRect {
-//       return bounds.inset(by: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
-//   }
-//   override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-//       return bounds.inset(by: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
-// }
-//}

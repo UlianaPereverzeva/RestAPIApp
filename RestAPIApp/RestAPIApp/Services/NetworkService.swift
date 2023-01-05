@@ -105,4 +105,11 @@ class NetworkService {
             }
         }
     }
+    
+    
+    static func getLocation(userID: Int, callBack: @escaping (_ result: JSON?, _ error: Error?) -> Void) {
+//        let addressLat = User.address?.geo?.lat
+//        let addresslng = User.address?.geo?.lng
+//        let url = ApiConstans.a
+    }
 }

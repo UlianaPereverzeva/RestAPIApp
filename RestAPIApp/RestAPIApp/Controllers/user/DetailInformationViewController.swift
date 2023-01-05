@@ -413,6 +413,7 @@ class DetailInformationViewController: UIViewController {
     
     @objc func addressbuttonAction(_ sender:UIButton!) {
         let vc = mapViewController()
+        vc.user = user
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
