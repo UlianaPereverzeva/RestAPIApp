@@ -60,18 +60,19 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     
     private func getThumbnail() {
         guard let thumbnailUrl = thumbnailUrl else { return }
-        AF.request(thumbnailUrl).responseImage { [weak self] response in
-            debugPrint(response)
+        if let image = CacheManager.shared.imageCache.image(withIdentifier: thumbnailUrl) {
+            self.activityIndicator.stopAnimating()
+            self.image.image = image
+        } else {
+            AF.request(thumbnailUrl).responseImage { [weak self] response in
+                debugPrint(response)
 
-            print(response.request)
-            print(response.response)
-            debugPrint(response.result)
-
-            if case .success(let image) = response.result {
-                print("image downloaded: \(image)")
-                
-                self?.activityIndicator.stopAnimating()
-                self?.image.image = image
+                if case .success(let image) = response.result {
+                    self?.activityIndicator.stopAnimating()
+                    self?.image.image = image
+                    
+                    CacheManager.shared.imageCache.add(image, withIdentifier: thumbnailUrl)
+                }
             }
         }
     }

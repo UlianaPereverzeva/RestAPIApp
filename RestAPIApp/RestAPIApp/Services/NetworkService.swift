@@ -23,6 +23,7 @@ class NetworkService {
             
             switch response.result {
             case.success(let data):
+                guard let data = data else { return }
                 jsonValue = JSON(data)
             case.failure(let error):
                 err = error
@@ -44,6 +45,7 @@ class NetworkService {
             
             switch response.result {
             case.success(let data):
+                guard let data = data else { return }
                 jsonValue = JSON(data)
             case.failure(let error):
                 err = error
@@ -56,13 +58,14 @@ class NetworkService {
         
         let url = "\(ApiConstans.albumsPath)?userId=\(userID)"
         
-        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
             
             var jsonValue: [JSON]?
             var err: Error?
             
             switch response.result {
             case.success(let data):
+                guard let data = data else { return }
                 jsonValue = JSON(data).arrayValue
             case.failure(let error):
                 err = error
@@ -83,6 +86,7 @@ class NetworkService {
             
             switch response.result {
             case.success(let data):
+                guard let data = data else { return }
                 jsonValue = JSON(data).arrayValue
             case.failure(let error):
                 err = error

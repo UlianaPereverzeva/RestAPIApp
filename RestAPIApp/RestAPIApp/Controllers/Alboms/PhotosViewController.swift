@@ -70,11 +70,11 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         CGSize(width: (collectionView.bounds.width / 2) - 15 , height: (collectionView.bounds.width / 2) - 15)
+         CGSize(width: (collectionView.bounds.width / 2) - 15 , height: (collectionView.bounds.width / 2) - 5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 15
     }
     
 }

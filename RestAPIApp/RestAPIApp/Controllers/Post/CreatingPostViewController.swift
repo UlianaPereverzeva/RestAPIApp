@@ -199,7 +199,7 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
                                           "title" : title,
                                           "body" : text]
             
-            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).response { response in
                 debugPrint(response)
                 print(response.request)
                 print(response.response)
@@ -207,6 +207,7 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
                 
                 switch response.result {
                 case.success(let data):
+                    guard let data = data else { return }
                     print(data)
                     print(JSON(data))
                     self.navigationController?.popViewController(animated: true)

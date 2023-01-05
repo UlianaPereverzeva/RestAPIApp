@@ -34,6 +34,7 @@
 		858252712965D0FF003525A7 /* AlbomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252702965D0FF003525A7 /* AlbomTableViewCell.swift */; };
 		858252732965F4C0003525A7 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252722965F4C0003525A7 /* PhotosViewController.swift */; };
 		858252752965F4E5003525A7 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */; };
+		858252772966BE77003525A7 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252762966BE77003525A7 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		858252702965D0FF003525A7 /* AlbomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomTableViewCell.swift; sourceTree = "<group>"; };
 		858252722965F4C0003525A7 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		858252762966BE77003525A7 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				858252672964ADE9003525A7 /* NetworkService.swift */,
+				858252762966BE77003525A7 /* CacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				85266425295DFBA30011C0FE /* postTableViewCell.swift in Sources */,
 				85266429295E0E2E0011C0FE /* ApiConstans.swift in Sources */,
 				8526641B295CAB410011C0FE /* MyTableViewCell.swift in Sources */,
+				858252772966BE77003525A7 /* CacheManager.swift in Sources */,
 				858252712965D0FF003525A7 /* AlbomTableViewCell.swift in Sources */,
 				8582526F2965CF9C003525A7 /* AlbomsViewController.swift in Sources */,
 				858252752965F4E5003525A7 /* PhotosCollectionViewCell.swift in Sources */,
