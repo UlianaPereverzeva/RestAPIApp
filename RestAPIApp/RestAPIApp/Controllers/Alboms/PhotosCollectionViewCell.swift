@@ -60,20 +60,10 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     
     private func getThumbnail() {
         guard let thumbnailUrl = thumbnailUrl else { return }
-        if let image = CacheManager.shared.imageCache.image(withIdentifier: thumbnailUrl) {
-            self.activityIndicator.stopAnimating()
-            self.image.image = image
-        } else {
-            AF.request(thumbnailUrl).responseImage { [weak self] response in
-                debugPrint(response)
-
-                if case .success(let image) = response.result {
-                    self?.activityIndicator.stopAnimating()
-                    self?.image.image = image
-                    
-                    CacheManager.shared.imageCache.add(image, withIdentifier: thumbnailUrl)
-                }
-            }
+        NetworkService.getPhoto(imageURL: thumbnailUrl) { [weak self] image, error in
+            self?.activityIndicator.stopAnimating()
+            self?.image.image = image
         }
     }
+
 }

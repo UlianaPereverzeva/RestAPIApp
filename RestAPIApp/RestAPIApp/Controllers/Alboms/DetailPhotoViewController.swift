@@ -58,24 +58,12 @@ class DetailPhotoViewController: UIViewController {
     }
     
     func getPhoto(){
-        
         guard let photo = photo,
               let imageURL = photo["url"].string else { return }
-        
-        if let image = CacheManager.shared.imageCache.image(withIdentifier: imageURL) {
-            self.activityIndicator.stopAnimating()
-            self.image.image = image
-        } else {
-            AF.request(imageURL).responseImage { [weak self] response in
-                if case .success(let image) = response.result {
-                    self?.activityIndicator.stopAnimating()
-                    self?.image.image = image
-                    CacheManager.shared.imageCache.add(image, withIdentifier: imageURL)
-                }
-            }
+ 
+        NetworkService.getPhoto(imageURL: imageURL) { [weak self] image, error in
+            self?.activityIndicator.stopAnimating()
+            self?.image.image = image
         }
     }
-    
-    
-
 }
