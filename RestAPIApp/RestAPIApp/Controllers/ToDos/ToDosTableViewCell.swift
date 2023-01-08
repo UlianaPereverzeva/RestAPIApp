@@ -33,7 +33,7 @@ class ToDosTableViewCell: UITableViewCell {
         
         self.taskIsReady.text = completed
         self.taskIsReady.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        self.taskIsReady.textColor = UIColor(red: 0.37, green: 0.78, blue: 0.37, alpha: 1.00)
+        self.taskIsReady.textColor = UIColor(red: 0.31, green: 0.73, blue: 0.31, alpha: 1.00)
         self.taskIsReady.textAlignment = .left
         self.taskIsReady.numberOfLines = 1
         self.taskIsReady.text = completed

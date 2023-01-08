@@ -132,7 +132,5 @@ class NetworkService {
     static func editPost(userId: Int, callback: @escaping (_ result: JSON?, _ error: Error?) -> Void) {
         let url = ApiConstans.postsPath + "/" + "\(userId)"
         
-        
-        
-    
+    }
 }
