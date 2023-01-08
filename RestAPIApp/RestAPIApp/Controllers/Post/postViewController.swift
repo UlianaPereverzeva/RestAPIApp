@@ -27,6 +27,7 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
 
         navigationItem.rightBarButtonItems = [add]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +89,11 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return UITableViewCell()
             }
         cell.configure(title: post.title ?? "" , text: post.body ?? "")
+        cell.editButtonAction = {
+            let vc = CreatingPostViewController()
+//           
+            self.navigationController?.pushViewController(vc, animated: true)
+                }
         return cell
     }
     

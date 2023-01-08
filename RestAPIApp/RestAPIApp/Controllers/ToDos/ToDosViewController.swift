@@ -21,6 +21,7 @@ class ToDosViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.backgroundColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
         self.navigationItem.title = "ToDos"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
+        
    }
     
     func setUpTableView() {

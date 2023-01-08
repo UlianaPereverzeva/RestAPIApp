@@ -13,8 +13,8 @@ class CreatingPostViewController: UIViewController, UITextViewDelegate {
 
     var user: User?
     
-    private var textView = UITextView()
-    private var textField = UITextField()
+     var textView = UITextView()
+     var textField = UITextField()
     private var postWithURLbutton = UIButton()
     private var postWithAlamofirebutton = UIButton()
 
