@@ -425,7 +425,9 @@ class DetailInformationViewController: UIViewController {
     }
     
     @objc func toDosButtonAction(_ sender:UIButton!) {
-        
+        let vc = ToDosViewController()
+        vc.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func postButtonAction(_ sender:UIButton!) {

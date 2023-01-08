@@ -36,6 +36,8 @@
 		858252752965F4E5003525A7 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */; };
 		858252772966BE77003525A7 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252762966BE77003525A7 /* CacheManager.swift */; };
 		858252792966C9E7003525A7 /* DetailPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858252782966C9E7003525A7 /* DetailPhotoViewController.swift */; };
+		8582527B296ABAF1003525A7 /* ToDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582527A296ABAF1003525A7 /* ToDosViewController.swift */; };
+		8582527E296ABB3F003525A7 /* ToDosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582527D296ABB3F003525A7 /* ToDosTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		858252742965F4E5003525A7 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		858252762966BE77003525A7 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		858252782966C9E7003525A7 /* DetailPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoViewController.swift; sourceTree = "<group>"; };
+		8582527A296ABAF1003525A7 /* ToDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosViewController.swift; sourceTree = "<group>"; };
+		8582527D296ABB3F003525A7 /* ToDosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +106,8 @@
 			children = (
 				85266422295DF54C0011C0FE /* postViewController.swift */,
 				85266424295DFBA30011C0FE /* postTableViewCell.swift */,
-				85266428295E0E2E0011C0FE /* ApiConstans.swift */,
 				853FA0E0295F4B5E008F4D40 /* CreatingPostViewController.swift */,
+				85266428295E0E2E0011C0FE /* ApiConstans.swift */,
 				858252692964BED7003525A7 /* CommentsViewController.swift */,
 				8582526B2964BF42003525A7 /* CommentsTableViewCell.swift */,
 			);
@@ -147,6 +151,7 @@
 				8582526D2965C4CF003525A7 /* Alboms */,
 				85266426295E09F70011C0FE /* user */,
 				85266427295E0A110011C0FE /* Post */,
+				8582527C296ABB19003525A7 /* ToDos */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +192,15 @@
 				858252782966C9E7003525A7 /* DetailPhotoViewController.swift */,
 			);
 			path = Alboms;
+			sourceTree = "<group>";
+		};
+		8582527C296ABB19003525A7 /* ToDos */ = {
+			isa = PBXGroup;
+			children = (
+				8582527A296ABAF1003525A7 /* ToDosViewController.swift */,
+				8582527D296ABB3F003525A7 /* ToDosTableViewCell.swift */,
+			);
+			path = ToDos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +296,7 @@
 				858252752965F4E5003525A7 /* PhotosCollectionViewCell.swift in Sources */,
 				853FA0E1295F4B5E008F4D40 /* CreatingPostViewController.swift in Sources */,
 				858252792966C9E7003525A7 /* DetailPhotoViewController.swift in Sources */,
+				8582527B296ABAF1003525A7 /* ToDosViewController.swift in Sources */,
 				858252732965F4C0003525A7 /* PhotosViewController.swift in Sources */,
 				8555BA28295B16B600F39F5F /* AppDelegate.swift in Sources */,
 				8555BA3D295B17ED00F39F5F /* ActionsCollectionViewController.swift in Sources */,
@@ -292,6 +307,7 @@
 				8582526A2964BED7003525A7 /* CommentsViewController.swift in Sources */,
 				8526641D295CAB490011C0FE /* UsersViewController.swift in Sources */,
 				8555BA3F295B2A3700F39F5F /* MyCollectionViewCell.swift in Sources */,
+				8582527E296ABB3F003525A7 /* ToDosTableViewCell.swift in Sources */,
 				8555BA2A295B16B600F39F5F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

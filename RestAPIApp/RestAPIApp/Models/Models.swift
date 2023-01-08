@@ -71,3 +71,12 @@ struct Photo: Decodable {
     let url: String?
     let thumbnailUrl: String?
 }
+
+// MARK: - ToDos
+
+struct ToDos: Decodable {
+    let userId: Int?
+    let id: Int?
+    let title: String?
+    let completed: Bool
+}

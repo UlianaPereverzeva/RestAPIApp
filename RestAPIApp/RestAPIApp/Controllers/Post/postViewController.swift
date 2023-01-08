@@ -19,7 +19,7 @@ class postViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setupTableView()
         
         view.backgroundColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
-        tableView.backgroundColor = .clear//UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
+        tableView.backgroundColor = .clear
         navigationItem.title = "Posts"
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.78, green: 0.88, blue: 0.78, alpha: 1.00)
         

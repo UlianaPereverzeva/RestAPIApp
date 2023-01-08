@@ -65,6 +65,7 @@ class ImageViewController: UIViewController {
     private func setUpActivityIndicator() {
         
         activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
         activityIndicator?.center = self.defaultImage.center
         self.view.addSubview(activityIndicator!)
         activityIndicator?.startAnimating()

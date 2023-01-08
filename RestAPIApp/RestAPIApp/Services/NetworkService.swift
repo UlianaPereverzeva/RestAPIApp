@@ -107,9 +107,32 @@ class NetworkService {
     }
     
     
-    static func getLocation(userID: Int, callBack: @escaping (_ result: JSON?, _ error: Error?) -> Void) {
-//        let addressLat = User.address?.geo?.lat
-//        let addresslng = User.address?.geo?.lng
-//        let url = ApiConstans.a
+    static func getToDos(userID: Int, callBack: @escaping (_ result: [ToDos]?, _ error: Error?) -> Void) {
+        let url = "\(ApiConstans.todosPath)?userId=\(userID)"
+        
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { response in
+            
+            var jsonValue: [ToDos]?
+            var errorValue: Error?
+            
+            switch response.result {
+            case.success(let data):
+                guard let data = data else { return }
+                do {
+                jsonValue = try JSONDecoder().decode([ToDos].self, from: data)
+                } catch {}
+            case.failure(let error):
+                errorValue = error
+            }
+
+            callBack(jsonValue, errorValue)
+        }
     }
+    
+    static func editPost(userId: Int, callback: @escaping (_ result: JSON?, _ error: Error?) -> Void) {
+        let url = ApiConstans.postsPath + "/" + "\(userId)"
+        
+        
+        
+    
 }

@@ -14,8 +14,8 @@ class ApiConstans {
     static let postsPath = serverPath + "posts"
     static let postsPathURL = URL(string: postsPath)
     
-//    static let adressPath = serverPath + "address"
-//    static let adressPathURL = URL(string: geoPath)
+    static let todosPath = serverPath + "todos"
+    static let todosPathURL = URL(string: todosPath)
     
     static let commentsPath = serverPath + "comments"
     static let commentsPathURL = URL(string: commentsPath)
